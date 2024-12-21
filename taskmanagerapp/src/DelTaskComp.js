@@ -29,7 +29,7 @@ export default function DeleteTasks() {
   const fetchTasks = async (username, date) => {
     if (!username) return;
 
-    let query = `http://localhost:5007/tasks?username=${username}`;
+    let query = `https://taskmanagement-nu.vercel.app/tasks?username=${username}`;
     if (date) {
       query += `&created_at=${date}`;
     }
@@ -54,7 +54,7 @@ export default function DeleteTasks() {
 
   const handleDelete = async () => {
     try {
-      await axios.post('http://localhost:5007/delete-tasks', {
+      await axios.post('https://taskmanagement-nu.vercel.app/delete-tasks', {
         ids: selectedTasks,
       });
       setTasks((prev) => prev.filter((task) => !selectedTasks.includes(task._id)));

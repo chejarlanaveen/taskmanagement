@@ -18,7 +18,7 @@ function CompletedTasks() {
         }
 
         // Fetch completed tasks with username in query parameters
-        const response = await axios.get('http://localhost:5007/completed-tasks', {
+        const response = await axios.get('https://taskmanagement-nu.vercel.app/completed-tasks', {
           params: { username,isDone:true }, // Include username from session storage
         });
         setCompletedTasks(response.data.tasks);
