@@ -8,7 +8,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 const corsOptions = {
-  origin: ['https://taskmanagement-nu.vercel.app/', 'http://localhost:3000'], // Allowed origins
+  origin: ['https://taskmanagement-nu.vercel.app', 'http://localhost:3000'], // Allowed origins
   methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
   allowedHeaders: ['Content-Type', 'Authorization'], // Allowed request headers
   credentials: true, // Enable cookies and credentials
