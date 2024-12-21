@@ -243,13 +243,15 @@ app.post('/login', async (req, res) => {
   }
 });
 
-// Conditional: Development vs Production
-if (process.env.NODE_ENV === 'development') {
-  const PORT = process.env.PORT1 || 5006;
-  app.listen(PORT, () => {
-    console.log(`Server running locally at http://localhost:${PORT}`);
-  });
-} else {
-  // Export the app for serverless deployment (e.g., Vercel)
-  module.exports = app;
-}
+module.exports = app;
+
+// // Conditional: Development vs Production
+// if (process.env.NODE_ENV === 'development') {
+//   const PORT = process.env.PORT1 || 5006;
+//   app.listen(PORT, () => {
+//     console.log(`Server running locally at http://localhost:${PORT}`);
+//   });
+// } else {
+//   // Export the app for serverless deployment (e.g., Vercel)
+//   module.exports = app;
+// }

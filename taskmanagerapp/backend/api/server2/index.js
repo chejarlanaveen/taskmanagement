@@ -413,13 +413,17 @@ app.post('/delete-tasks', async (req, res) => {
   }
 });
 
+module.exports = app;
+
 // Development vs Production Environment
-if (process.env.NODE_ENV === 'development') {
-  const PORT = process.env.PORT2 || 5007;
-  app.listen(PORT, () => {
-    console.log(`Server running locally at http://localhost:${PORT}`);
-  });
-} else {
-  // For production (e.g., Vercel), export the app
-  module.exports = app;
-}
+// if (process.env.NODE_ENV === 'development') {
+//   const PORT = process.env.PORT2 || 5007;
+//   app.listen(PORT, () => {
+//     console.log(`Server running locally at http://localhost:${PORT}`);
+//   });
+// } else {
+//   // For production (e.g., Vercel), export the app
+//   module.exports = app;
+// }
+
+
