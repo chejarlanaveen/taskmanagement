@@ -7,9 +7,18 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const app = express();
 
+const corsOptions = {
+  origin: ['https://taskmanagement-nu.vercel.app/', 'http://localhost:3000'], // Allowed origins
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
+  allowedHeaders: ['Content-Type', 'Authorization'], // Allowed request headers
+  credentials: true, // Enable cookies and credentials
+};
+
+
+
 // Middleware
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 // MongoDB connection setup
 const connectDB = async () => {
